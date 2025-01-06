@@ -1,0 +1,63 @@
+1.)
+	int sum = 0;
+	for (int counter = n; counter > 0; counter = counter - 2)
+		sum = sum + counter;
+		
+Since a for loop is normally O(n), a for loop that subtracts by 2 would do half as many iterations so
+the answer is O(n/2), but we ignore the constant so it actually equals O(n).
+
+2.)
+	for (int pass = 1; pass <= n; pass++)
+	{
+		for(int index  = 0; index < n; index++)
+		{
+			for(int count = 1; count < 10; count++)
+			{
+				. . . 
+
+			} //end for
+		} // end for
+	} //end for
+	
+outside for loop = O(n)
+second for loop = O(n)
+inside for loop = 9
+this means the answer is 9n^2 or O(n^2).
+
+3.)
+	Consider two programs, A and B. Program A requires 1000 x n^2 operations 
+	and Program B requires 2^n operaitons. 
+	For which values of n will Program A execute faster than Program B?
+
+f(10) 1000n^2 = 100000
+f(10) 2^n = 1024
+
+f(20) 1000n^2 = 400000
+f(20) 2^n = 1048576
+
+f(19) 1000n^2 = 361000
+f(19) 2^n = 524288
+
+f(18) 1000n^2 = 324000
+f(18) 2^n 262144
+
+Program A will execute faster when n < 19.
+
+4.)
+	Consider an array of length "n" containing unique integers in random order and in the range 1 to n + 1. 
+	For example an array of length 5 would contain 5 unique integers selected randomly from the 
+	integers 1 through 6. Thus the array might contain 3 6 5 1 4. Of the integers 1 through 6, 
+	notice that 2 was not selected and is not in the array. 
+	Write Java code that finds the integer that does not appear in such an array. 
+	Explain the Big-Oh in your code.
+
+public static void main(String[] args){
+	int[] numArr = {3,6,5,1,4};
+	int maxSum = ((numArr.length+1) * (numArr.length+2))/2; //sum of integers formula with the addition of n+1 
+	for(int i=0; i < numArr.length; i++){
+		maxSum = maxSum - numArr[i];
+	}
+	System.out.println("Missing number from array is " + maxSum+".");
+}
+
+Since there is only one for loop, the big O computation for the program is O(n).
