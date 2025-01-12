@@ -1,6 +1,19 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Stack;
 public class postfix {
     public static void main(String[] args) {
+        try (BufferedReader br = new BufferedReader(new FileReader("postfix.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println("Postfix expression: " + line);
+                System.out.print("Postfix expression result: ");
+                parsePostfix(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         String expression = "42*3+";
         System.out.println("Postfix expression: " + expression);
         System.out.print("Postfix expression result: ");
@@ -13,7 +26,7 @@ public class postfix {
         System.out.println("Postfix expression: " + expression3);
         System.out.print("Postfix expression result: ");
         parsePostfix(expression3);
-        
+
     }
     public static void parsePostfix(String expression){
         Stack<Integer> stack = new Stack<>();
