@@ -1,11 +1,11 @@
-package Module4;
+package module4;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Stack;
 public class postfix {
     public static void main(String[] args) {
-        try (BufferedReader br = new BufferedReader(new FileReader("postFix.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\onesh\\OneDrive\\Documents\\GitHub\\DataStructures\\Module4\\module4postFix.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 System.out.println("Postfix expression: " + line);
