@@ -21,6 +21,7 @@ public class radixSort {
         return;
     }
     bucketSort(arr, place);
+
     sort(arr, place * 10, max);//recursive call to sort array place value is mutliplied by 10 - 1*10 gets your to the tens place then hundreds etc...
     }
     //bucketSort method is called for every place value
@@ -28,9 +29,9 @@ public class radixSort {
         int n = arr.length;
         int[][] buckets = new int[10][n];//2D array to hold all buckets
         int[] bCount = new int[10];
-
+        System.out.println("Sorted array:   "+ java.util.Arrays.toString(arr));
         for (int i = 0; i < n; i++) {
-            int bIndex = (arr[i] / place) % 10;
+            int bIndex = (arr[i] / place) % 10; //extracts current place value
             buckets[bIndex][bCount[bIndex]++] = arr[i];
         }
 
