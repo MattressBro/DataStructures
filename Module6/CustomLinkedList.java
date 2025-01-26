@@ -75,8 +75,13 @@ public class CustomLinkedList {
             while (iterator.hasNext()) {
                 System.out.print(iterator.next() + " ");
             }
+            System.out.println();
             System.out.println("Deleting 2");
             delete(2);
+            Iterator<Integer> iterator2 = linkedList.iterator();
+            while (iterator2.hasNext()) {
+                System.out.print(iterator2.next() + " ");
+            }
     }
 }
 
