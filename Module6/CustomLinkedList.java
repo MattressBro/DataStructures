@@ -82,6 +82,7 @@ public class CustomLinkedList {
             while (iterator2.hasNext()) {
                 System.out.print(iterator2.next() + " ");
             }
+            
     }
 }
 
