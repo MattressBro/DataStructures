@@ -1,0 +1,15 @@
+//pseudocode
+//Braden Heeney
+//CS400-1 
+//1/26/2025
+
+insert(int data)
+    create new node = to int wanting to be added
+    make new node.next = to current head 
+    make head = to new node
+    
+delete(int data)
+    make sure head isn't null
+    iterate through the list until found 
+    make head = head.next thus removing the desired data
+    
