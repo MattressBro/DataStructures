@@ -11,7 +11,7 @@ public class CustomLinkedList {
             head = newNode;
         }
         public static void delete(int data) {
-                if (head == null) {
+            if (head == null) {
                 return;
             }
             if (head.data == data) {
