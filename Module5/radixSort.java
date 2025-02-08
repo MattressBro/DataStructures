@@ -41,6 +41,16 @@ public class radixSort {
             }
         }
     }
+    private static void splitArray(int[] arr, int[] positive, int[] negative) {
+        int posIndex = 0, negIndex = 0;
+        for (int num : arr) {
+            if (num >= 0) {
+                positive[posIndex++] = num;
+            } else {
+                negative[negIndex++] = num;
+            }
+        }
+    }
         public static void main(String[] args){
         int[] arr = {783,99,472,182,264,543,356,295,692,491,94};
         int max = maxNum(arr);
